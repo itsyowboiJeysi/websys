@@ -1,23 +1,13 @@
 const express = require('express');
+const path = require('path');
 const app = express();
 
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+app.use(express.static(path.join(__dirname, 'public')));
 
-// Set port
-const PORT = 3000;
-
-// Middleware (optional)
-app.use(express.json());
-
-// Routes
 app.get('/', (req, res) => {
-  res.send('Hello, Express server is running!');
+    res.render('index', { title: 'Home Page' });
 });
 
-app.get('/api', (req, res) => {
-  res.json({ message: 'Welcome to the API' });
-});
-
-// Start server
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
-});
+app.listen(3000, () => console.log('Server running on port 3000'));

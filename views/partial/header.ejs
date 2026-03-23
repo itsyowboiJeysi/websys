@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title || "My Express App" %></title>
+  <!-- Add your CSS links here -->
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="container">
+        <a href="/" class="logo">MySite</a>
+        <ul class="nav-links">
+          <li><a href="/" class="<%= page === 'home' ? 'active' : '' %>">Home</a></li>
+          <li><a href="/about" class="<%= page === 'about' ? 'active' : '' %>">About</a></li>
+          <li><a href="/contact" class="<%= page === 'contact' ? 'active' : '' %>">Contact</a></li>
+          <li><a href="/blog" class="<%= page === 'blog' ? 'active' : '' %>">Blog</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
