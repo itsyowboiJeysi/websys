@@ -1,8 +1,5 @@
 <%- include('partial/header', { title: 'Home Page', page: 'home' }) %>
 
-<main>
-  <h1>Welcome to <%= title %>!</h1>
-</main>
 <h1>WELCOME TO OUR TABLE</h1>
 
 <table border="1">
@@ -11,19 +8,17 @@
       <th>ID</th>
       <th>Name</th>
       <th>Email</th>
-      <th>Address</th>
     </tr>
   </thead>
   <tbody>
-    <% employees.forEach(function(user) { %>
+    <% users.forEach(function(user) { %>
       <tr>
-        <td><%= user.EmployeeID %></td>
-        <td><%= user.Name %></td>
-        <td><%= user.Email %></td>
-        <td><%= user.Address %></td>
-
+        <td><%= user.id %></td>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
       </tr>
     <% }); %>   
   </tbody>
 </table>
+
 <%- include('partial/footer') %>
